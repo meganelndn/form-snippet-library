@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    padding: 2rem;
+}
+
+.item:nth-child(even) {
+    background-color: rgb(213, 213, 213);
+}
+
+.item:nth-child(odd) {
+    background-color: rgb(255, 234, 234);
+}
+
+p,
+h1,
+h2,
+h3,
+input,
+label,
+legend,
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 75ch;
+}
+
+#name-text,
+.long input {
+    width: 500px;
+}
+
+li {
+    padding-bottom: 1rem;
+    max-width: 50ch;
+}
+
+.index li {
+    padding-bottom: 0;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.item .language-html {
+    margin: 1rem 0;
+    padding: 10px;
+    font-size: 10px;
+}
+
+input:valid+.invalid {
+    visibility: hidden;
+}
+
+input:invalid+.invalid {
+    visibility: visible;
+}
+
+input:valid {
+    border-bottom: transparent;
+}
+
+.invalid {
+    color: #999;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paddingB {
+    padding-bottom: 1rem;
+}
+
+.heading {
+    padding: 2rem;
+}
+
+/* html {
+    margin: 15px;
+}
+
+#header {
+    border-bottom: 1px solid black;
+    padding-bottom: 50px;
+}
+
+h2 {
+    margin-top: 60px;
+}
+
+h3 {
+    font-size: 20px;
+    padding-top: 60px;
+}
+
+h4 {
+    margin-top: 40px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.language-html {
+    font-size: 12px;
+} */
