@@ -6,317 +6,381 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Snippet Library</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
 </head>
 
 <body>
+
   <h1 class="heading">Form Snippet Library</h1>
+
+  <article class="title">
+    <h2>Input types</h2>
+    <p>The HTML input element is used to create interactive controls for web-based forms
+      and specifies an input field where the user can enter data. An input field can vary
+      in many ways, depending on the type attribute.</p>
+    <br>
+    <p>
+      <span class="bold">Label</span> should always be used with input fields to determine what input should be in
+      them.<br />
+      <span class="bold">For</span> points to the inputs ID.<br />
+      <span class="bold">Input</span> type decides what content can be put inside the input.<br />
+      <span class="bold">Placeholder</span> holds text that wil be hiddenn when the user starts to type in the
+      field.<br />
+      <span class="bold">Required</span> is an attribute you use, if the field is mandatory.<br />
+      <span class="bold">Pattern</span> tells the input field what type of characters are valid. <br />
+      <span class="bold">Autofocus</span> sets this input field in focus.
+    </p>
+  </article>
 
   <section class="container">
 
-    <article class="item">
-      <h1>Forms</h1>
+    <article>
+      <h3>Forms</h3>
       <form action="mail.php" method="POST">
         <input type="text" />
       </form>
       <button type="submit">Submit</button>
-      <pre><code class="language-html"><form action="mail.php" method="POST">
-        <input type="text">
-</form>
-<button type="submit">Submit</button></code></pre>
-      <p>
-        Inside of a form all types of inputs/selects ect. can be placed.<br />
-        The action attribute determines what happens after the submit button has been clicked and the method determines
-        whether the form should post, get, put or delete something.<br />
-        The button can have the type submit, if you just want it to do the action. If you want to controll it with js,
-        leave the type off.
-      </p>
-    </article>
-
-    <article class="item">
-      <span class="bold"></span>
-      <h1>Input</h1>
-      <label for="name-text">Input name</label><br />
-      <input type="text" id="name-text" placeholder="first and last name, use uppercase" required autofocus />
-
       <pre><code class="language-html">
-                <label for="name-text">Input name</label>
-                  <input type="text" id="name-text" placeholder="first and last name, use uppercase" required autofocus />
-</code></pre>
+        <form action="mail.php" method="POST">
+          <input type="text">
+        </form>
+
+        <button type="submit">Submit</button>
+    </code></pre>
       <p>
-        <span class="bold">Label</span> should always be used with input fields to determine what input should be in
-        them.<br />
-        <span class="bold">For</span> points to the inputs ID.<br />
-        <span class="bold">Input</span> type decides what content can be put inside the input.<br />
-        <span class="bold">Placeholder</span> holds text that wil be hiddenn when the user starts to type in the
-        field.<br />
-        <span class="bold">Required</span> is an attribute you use, if the field is mandatory.<br />
-        <span class="bold">Pattern</span> tells the input field what type of characters are valid. <br />
-        <span class="bold">Autofocus</span> sets this input field in focus.
+        Inside of a form all types of inputs/selects can be placed.<br />
+        Action attribute = what happens when "submit" is clicked. <br />
       </p>
     </article>
 
-    <article class="item">
-      <h1>Textareas</h1>
-      <textarea id="message" placeholder="Type a long text" rows="10" cols="100"></textarea>
-      <pre><code class="language-html"><textarea placeholder="Type a long text" rows="10" cols="100"></textarea></code></pre>
-      <p>For paragraphs</p>
+    <article>
+      <h3>Text</h3>
+      <input type="text" id="name" placeholder="ex. John Smith" required />
+      <pre><code class="language-html">
+      <label for="name">
+        Full Name
+      </label>
+      
+      <input type="text" id="name-text" placeholder="ex. John Smith" required autofocus />
+      </code></pre>
+      <p>Elements of this input create basic single-line text fields and is used
+        for text.</p>
     </article>
 
-    <article class="item long">
-      <h1>Patterns</h1>
-      <input type="text" placeholder="needs at least eight letters" pattern=".{8,}" />
-      <pre><code class="language-html"> <input type="text" placeholder="needs at least eight letters" pattern=".{8,}" /></code></pre>
-      <input type="text" placeholder="At leat one number and one uppercase letter and at least 8 characters"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-      <pre><code class="language-html"> <input type="text" placeholder="At leat one number and one uppercase letter and at least 8 characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" /></code></pre>
-
-      <input type="text" placeholder="Cannot contaion the following characters: ' and &quot;." pattern="[^'\x22]+" />
-      <pre><code class="language-html"> <input type="text" placeholder="Cannot contaion the following characters: ' and &quot;." pattern="[^'\x22]+" /></code></pre>
-
-      <input type="text" placeholder="Can only contain 3 letters and only letters (used for contry codes fx. DEN)"
-        pattern="[A-Za-z]{3}" />
-      <pre><code class="language-html"> <input type="text" placeholder="Can only contain 3 letters and only letters (used for contry codes fx. DEN)" pattern="[A-Za-z]{3}"/></code></pre>
-    </article>
-    <article class="item">
-      <h1>Color</h1>
-      <input type="color" />
-      <pre><code class="language-html"><input type="color"></code></pre>
-      <p>This input make a color picker the user can interact with</p>
+    <article>
+      <h3>Number</h3>
+      <input type="number" id="number" placeholder="ex. 12" required />
+      <pre><code class="language-html">
+        <label for="number">
+         Number
+        </label>
+        
+        <input type="number" id="number" placeholder="ex. 12" required />
+      </code></pre>
+      <p>Elements of this input type creates text fields and accepts numbers; it has
+        an up/down switch.</p>
     </article>
 
-    <article class="item">
-      <h1>Datalist</h1>
-      <input list="valg" placeholder="Vælg" />
-      <datalist id="valg">
+    <article>
+      <h3>Email</h3>
+      <input type="email" placeholder="ex. johndoe@gmail.com">
+      <pre><code class="language-html">
+        <label for="email">
+          Email
+        </label>
+        
+        <input type="email">
+      </code></pre>
+      <p>Elements of this input type creates text fields and accepts an email address.</p>
+    </article>
+
+    <article>
+      <h3>URL</h3>
+      <input type="url" placeholder="ex. https://google.com">
+      <pre><code class="language-html">
+        <label for="url">
+          URL
+        </label>
+        
+        <input type="url" placeholder="ex. https://google.com">
+      </code></pre>
+      <p>Elements of this input type create text fields that accepts a valid website URL.</p>
+    </article>
+
+    <article>
+      <h3>Password</h3>
+      <input type="password" placeholder="Password" minlength="10" maxlength="20" />
+      <pre><code class="language-html">
+        <label for="password">
+          Password
+        </label>
+        
+        <input type="password" placeholder="Password" minlength="10" maxlength="20" />
+      </code></pre>
+      <p>Elements of this input type create text fields that masks the text that is being
+        entered with bullets.</p>
+    </article>
+
+    <article>
+      <h3>Tel</h3>
+      <input type="tel" placeholder="ex. (+46) 722 97 63 90">
+      <pre><code class="language-html">
+        <label for="tel">
+          Telephone
+        </label>
+        
+        <input type="tel" placeholder="ex. (+46) 722 97 63 90">
+      </code></pre>
+      <p>Elements of this input type create text fields that accepts telephone numbers. There
+        is no restricted format to accommodate all different countries.</p>
+    </article>
+
+    <article>
+      <h3>Time</h3>
+      <input type="time">
+      <pre><code class="language-html">
+        <label for="time">
+          Time
+        </label>
+        
+        <input type="time">
+      </code></pre>
+      <p>Elements of this input type create text fields that accepts time: hours, minutes,
+        seconds.</p>
+    </article>
+
+    <article>
+      <h3>Date</h3>
+      <input type="date">
+      <pre><code class="language-html">
+        <label for="date">
+          Date
+        </label>
+        
+        <input type="date">
+      </code></pre>
+      <p>Elements of this input type create text fields that accepts dates; a calendar picker.</p>
+      <h4>...or pre-defined dates:</h4>
+      <input type="datetime-local" name="kalender" value="2019-01-25T19:30" min="2019-01-01T00:00"
+        max="2021-12-31T00:00" />
+      <pre><code class="language-html">
+        <label for="datetime-local">
+          Date and Time
+        </label>
+        
+        <input type="datetime-local"  
+               id="kalender" 
+               name="Kalender" 
+               value="2019-01-25T19:30" 
+               min="2019-01-01T00:00" 
+               max="2021-12-31T00:00">
+      </code></pre>
+    </article>
+
+    <article>
+      <h1>Month</h1>
+      <input type="month" value="2020-06" />
+      <pre><code class="language-html">
+        <label for="month">
+          Month
+        </label>
+        
+        <input type="month" value="2020-06">
+      </code></pre>
+      <p>Drop down to choose a month in a paticular year. When using value it's predefined</p>
+    </article>
+
+    <article>
+      <h1>Week</h1>
+      <input type="week" value="2020-W01" />
+      <pre><code class="language-html"> 
+        <label for="week">
+          Week
+        </label>
+        
+        <input type="week" value="2020-W01">
+      </code></pre>
+      <p>Drop down to choose a week in a paticular year. When using value it's predefined</p>
+    </article>
+
+    <article>
+      <h1>Time</h1>
+      <input type="time" value="12:00" />
+      <pre><code class="language-html"> 
+        <label for="time">
+          Time
+        </label>
+        
+        <input type="time" value="12:00" />
+      </code></pre>
+      <p>Input field to choose time. When using value it's predefined</p>
+    </article>
+
+    <article>
+      <h3>Range</h3>
+      <input type="range">
+      <pre><code class="language-html">
+        <label for="range">
+          Range
+        </label>
+        
+        <input type="range">
+      </code></pre>
+      <p>Elements of this input type create text fields for selecting from a range of numbers.</p>
+    </article>
+
+    <article>
+      <h3>Color</h3>
+      <input type="color">
+      <pre><code class="language-html">
+        <label for="color">
+          Color
+        </label>
+        
+        <input type="color">
+      </code></pre>
+      <p>Elements of this input type create color pickers for picking a specific color.</p>
+    </article>
+
+    <article>
+      <h3>File</h3>
+      <input type="file" accept=".jpg,.png,.gif">
+      <pre><code class="language-html">
+        <label for="file">
+          File
+        </label>
+        
+        <input type="file" accept=".jpg,.png,.gif">
+      </code></pre>
+      <p>Elements of this input type create buttons for chosing a file to upload.<br>
+        Uses accept="…" to limit filetypes.</p>
+    </article>
+
+    <article>
+      <h3>Search</h3>
+      <input type="search" placeholder="Type to search...">
+      <pre><code class="language-html">
+        <label for="search">
+          Search
+        </label>
+        
+        <input type="search">
+      </code></pre>
+      <p>Elements of this input type create text fields that specifies the input as a search
+        field.</p>
+    </article>
+
+    <article>
+      <h3>Checkbox</h3>
+      <input type="checkbox">
+      <label for="checked">
+        1
+      </label>
+      <input type="checkbox">
+      <label for="checked">2</label>
+      <input type="checkbox">
+      <label for="checked">3</label>
+      <pre><code class="language-html">
+        <input type="checkbox">
+          <label for="checked">1</label>
+        <input type="checkbox">
+          <label for="checked">2</label>
+        <input type="checkbox">
+          <label for="checked">3</label>
+      </code></pre>
+      <p>Elements of this input type turns the input into a check toggle.</p>
+    </article>
+
+    <article>
+      <h3>Select</h3>
+      <select>
+        <optgroup label="Numbers">
+          <option>1</option>
+          <option>2</option>
+        </optgroup>
+        <optgroup label="Names">
+          <option>Jonas</option>
+          <option>Dannie</option>
+        </optgroup>
+      </select>
+      <pre><code class="language-html">
+      <select>
+        <optgroup label="Numbers">
+          <option>1</option>
+          <option>2</option>
+        </optgroup>
+        <optgroup label="Names">
+          <option>Jonas</option>
+          <option>Dannie</option>
+        </optgroup>
+      </select>
+      </code></pre>
+      <p>Elements of this input type create select boxes, aka dropdown boxes, that allows a user
+        to pick one option of many.</p>
+    </article>
+
+    <article>
+      <h3>Textarea</h3>
+      <textarea id="message" placeholder="Type your message here..." rows="10" cols="50"></textarea>
+      <pre><code class="language-html">
+        <textarea id="message" 
+                  placeholder="Type your message here..." 
+                  rows="10" 
+                  cols="50"></textarea>
+      </code></pre>
+      <p>Elements of this input are an alternative to input type='text' that allows multiple
+        lines and longer text.</p>
+    </article>
+
+    <article>
+      <h3>Datalist</h3>
+      <input list="choose" placeholder="Choose" />
+      <datalist id="choose">
         <option>1</option>
         <option>2</option>
         <option>3</option>
       </datalist>
       <pre><code class="language-html">
-         <input list="valg" placeholder="Vælg" />
-         <datalist id="valg">
-           <option>1</option>
-           <option>2</option>
-           <option>3</option>
-          </datalist>
-        </code></pre>
+      <input list="choose" placeholder="Choose" />
+
+      <datalist id="choose">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </datalist>
+     </code></pre>
       <p>The input is linked to the datalist with the attribute "list". It has a placeholder and the datalist has 3
         options.</p>
+      <p></p>
     </article>
 
-    <article class="item">
-      <h1>Select</h1>
-      <p>This select has 3 options.</p>
-      <select>
-        <option>Manitoba</option>
-        <option>Ontario</option>
-        <option>Quebec</option>
-      </select>
-      <br />
-      <br />
-      <p>This select has 2 grouping kategories that can't be clicked</p>
-      <select>
-        <optgroup label="Canada">
-          <option>Ontario</option>
-          <option>Québec</option>
-        </optgroup>
-        <optgroup label="United States">
-          <option>New York</option>
-          <option>California</option>
-        </optgroup>
-      </select>
+    <article>
+      <h3>Patterns</h3>
+      <input type="text" placeholder="At leat one number and one uppercase letter and at least 8 characters"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
       <pre><code class="language-html">
-          <select>
-            <option>Manitoba</option>
-            <option>Ontario</option>
-            <option>Quebec</option>
-          </select>
-
-          <select>
-            <optgroup label="Canada">
-              <option>Ontario</option>
-              <option>Québec</option>
-            </optgroup>
-            <optgroup label="United States">
-              <option>New York</option>
-              <option>California</option>
-            </optgroup>
-          </select>
-        </code></pre>
+      <input type="text" 
+             placeholder="At leat one number and one uppercase letter and at least 8 characters"
+             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+      </code></pre>
+      <p></p>
     </article>
 
     <article class="item">
-      <h1>Checkboxes</h1>
-      <input type="checkbox" checked id="checked" />
-      <label for="checked">Checkbox</label>
-      <pre><code class="language-html"> <input type="checkbox" checked id="checked" />
- <label for="checked">Checkbox</label></code></pre>
-      <p>This is a checkbox. When adding the attribute "checked" it is checked by default</p>
-    </article>
-
-    <article class="item">
-      <h1>Radio buttons</h1>
-      <br />
-      <fieldset>
-        <legend>What’s your favourite colour?</legend>
-        <br />
-
-        <input type="radio" id="green" name="fav-color" checked />
-        <label for="green">Green</label>
-
-        <input type="radio" id="light-green" name="fav-color" />
-        <label for="light-green">Light Green</label>
-
-        <input type="radio" id="dark-green" name="fav-color" />
-        <label for="dark-green">Dark Green</label> <br />
-        <br />
-      </fieldset>
-
-      <pre><code class="language-html">        <fieldset>
-          <legend>What’s your favourite colour?</legend> <br />
-
-          <input type="radio" id="green" name="fav-color" checked />
-          <label for="green">Green</label>
-
-          <input type="radio" id="light-green" name="fav-color" />
-          <label for="light-green">Light Green</label>
-
-          <input type="radio" id="dark-green" name="fav-color" />
-          <label for="dark-green">Dark Green</label> <br /> <br />
-        </fieldset></code></pre>
-      <p>
-        When adding the attribute "checked" it is checked by default. By using the same name, the radio buttons are
-        grouped together and can be used together. <br />
-        The fieldset is used to group the buttons together semantically, and the tag can group any input fields that
-        belongs together. This should always be used on radios and checkboxes.<br />
-        Legend adds a title to the fieldset. Must be inside a fieldset.
-      </p>
-    </article>
-
-    <article class="item">
-      <h1>Url</h1>
-      <input type="url" placeholder="website" />
-      <pre><code class="language-html"><input type="url" placeholder="website" /></code></pre>
-      <p>Looks like a regular text field, but the keyboard on smartphones change</p>
-    </article>
-
-    <article class="item">
-      <h1>Hidden</h1>
-      <input type="hidden" />
-      <pre><code class="language-html"><input type="hidden"/></code></pre>
-      <p>Hides the input field</p>
-    </article>
-
-    <article class="item">
-      <h1>Tel</h1>
-      <input type="tel" placeholder="Telephone" />
-      <pre><code class="language-html"><input type="tel" placeholder="Telephone" /></code></pre>
-      <p>Looks like a regular text field, but the keyboard on smartphones change</p>
-    </article>
-
-    <article class="item">
-      <h1>Number</h1>
-      <input type="number" placeholder="number" />
-      <pre><code class="language-html"><input type="number" placeholder="number" /></code></pre>
-      <p>Looks like a regular text field, but the keyboard on smartphones change</p>
-    </article>
-
-    <article class="item">
-      <h1>Password</h1>
-      <input type="password" placeholder="Password" minlength="10" maxlength="20" />
-      <pre><code class="language-html"><input type="password" placeholder="Password" minlength="10" maxlength="20" /></code></pre>
-      <p>For passwords with a min-length of 10 characters and max-length of 20</p>
-    </article>
-
-    <article class="item">
-      <h1>File</h1>
-      <input type="file" placeholder="file" />
-      <pre><code class="language-html"><input type="file" placeholder="file" /></code></pre>
-      <p>For upload of a file</p>
-    </article>
-
-    <article class="item">
-      <h1>Range</h1>
-      <input type="range" min="0" max="100" step="10" value="0" />
-      <pre><code class="language-html"><input type="range" min="0" max="100" step="10" value="0"/></code></pre>
-      <p>Min and max sets the length of the range and steps detemines how far the range shoul increase/decrease at a
-        time. value determined where the range starts</p>
-    </article>
-
-    <article class="item">
-      <h1>Search</h1>
-      <input type="search" placeholder="search..." />
-      <pre><code class="language-html"><input type="search" placeholder="search..." /></code></pre>
-    </article>
-
-    <article class="item">
-      <h1>Dates</h1>
-      <input type="date" /><br />
-      <pre><code class="language-html"><input type="date" /></code></pre>
-      <p>
-        Or pre-defined with time:
-      </p>
-      <input type="datetime-local" name="kalender" value="2019-01-25T19:30" min="2019-01-01T00:00"
-        max="2021-12-31T00:00" />
-      <pre><code class="language-html"><input type="datetime-local" id="kalender" name="Kalender" value="2019-01-25T19:30" min="2019-01-01T00:00" max="2021-12-31T00:00"></code></pre>
-    </article>
-
-    <article class="item">
-      <h1>Month</h1>
-      <input type="month" value="2020-06" />
-      <pre><code class="language-html"><input type="month" value="2020-06"/></code></pre>
-      <p>Drop down to choose a month in a paticular year. When using value it's predefined</p>
-    </article>
-
-    <article class="item">
-      <h1>Week</h1>
-      <input type="week" value="2020-W01" />
-      <pre><code class="language-html"> <input type="week" value="2020-W01"></code></pre>
-      <p>Drop down to choose a week in a paticular year. When using value it's predefined</p>
-    </article>
-
-    <article class="item">
-      <h1>Time</h1>
-      <input type="time" value="12:00" />
-      <pre><code class="language-html"> <input type="time" value="12:00" /></code></pre>
-      <p>Inpu field to choose time. When using value it's predefined</p>
-    </article>
-
-    <article class="item">
-      <h1>Summary and detalils</h1>
-      <details>
-        <summary>Summery</summary>
-        <p>Indhold i paragraph</p>
-        <p>Indhold i paragraph</p>
-        <p>Indhold i paragraph</p>
-        <p>Indhold i paragraph</p>
-      </details>
-      <pre><code class="language-html">  <details>
-          <summary>Summery</summary>
-          <p>Indhold i paragraph</p>
-          <p>Indhold i paragraph</p>
-          <p>Indhold i paragraph</p>
-          <p>Indhold i paragraph</p>
-        </details></code></pre>
-      <p>A summery drop down</p>
-    </article>
-
-    <article class="item">
-      <h1>CSS validate</h1>
+      <h1>Validation</h1>
       <form>
         <input type="text" id="username" name="username" pattern="[a-zA-Z ]{5,}" placeholder="username" maxlength="30"
           required />
 
         <div class="invalid">
-          Brugernavnet må kun bestå af bogstaver og skal bestå af minimum 5.
+          Username can only contain characters and a minimum of 5.
         </div>
 
         <input type="email" id="email" name="email" placeholder="email" required />
 
         <div class="invalid">
-          E-mailadressen må ikke indeholde andre specielle tegn end '.' or '@'.
+          The e-mail address cannot contain other special characters than '.' or '@'.
         </div>
 
         <div class="push-down-top">
@@ -325,30 +389,35 @@
         </div>
       </form>
 
-      <pre><code class="language-html"> <form>
+      <pre><code class="language-html"> 
+      <form>
           <input type="text" id="username" name="username" pattern="[a-zA-Z ]{5,}" placeholder="username" maxlength="30" required />
-          <div class="invalid">
-              Brugernavnet må kun bestå af bogstaver og skal bestå af minimum 5.
-          </div>
+        <div class="invalid">
+          Username can only contain characters and a minimum of 5.
+        </div>
           <input type="email" id="email" name="email" placeholder="email" required />
-          <div class="invalid">
-              E-mailadressen må ikke indeholde andre specielle tegn end '.' eller '@'.
-          </div>
-          <div class="push-down-top">
-              <button class="btn btn-link">Cancel</button>
-              <button class="btn">Login</button>
-          </div>
+        <div class="invalid">
+          The e-mail address cannot contain other special characters than '.' or '@'.
+        </div>
+        <div class="push-down-top">
+        <button class="btn btn-link">Cancel</button>
+        <button class="btn">Login</button>
+        </div>
       </form>
 
       <style>
-      input:valid + .invalid {  visibility: hidden; }
-      input:invalid + .invalid { visibility: visible; }
-      input:required {border-left: 4px solid red;}
-     </style> </code></pre>
+        input:valid + .invalid {  visibility: hidden; }
+        input:invalid + .invalid { visibility: visible; }
+        input:required {border-left: 4px solid red;}
+      </style> 
+      </code></pre>
     </article>
 
-    <article class="item">
-      <h1 class="paddingB">Input attributes</h1>
+    <article class="title">
+      <h2>Input attributes</h2>
+    </article>
+
+    <article>
       <div class="flex">
         <ul>
           <li>required <br />Define the input as being compulsory.</li>
@@ -356,15 +425,15 @@
           <li>value="…" <br />Puts a default value into the field.</li>
           <li>placeholder="…" <br />Adds a temporary, helpful hint into the field.</li>
           <li>autocomplete="off" <br />Disable auto completion in the field.</li>
-          <li>autocapitalize="none" <br />Disable auto capitalization in the field. Non-standard: only works in iOS.
+          <li>autocapitalize="none" <br />Disable auto capitalization in the field. Non-standard: only works
+            in iOS.
           </li>
-          <li>inputmode="…" <br />Hint the browser to display a specific keyboard. verbatim, numeric, etc.</li>
+          <li>inputmode="…" <br />Hint the browser to display a specific keyboard. verbatim, numeric, etc.
+          </li>
           <li>list="…" <br />The id of an associated datalist</li>
           <li>maxlength="…" <br />For setting a maximum number of characters.</li>
           <li>minlength="…" <br />For setting a minimum number of characters.</li>
           <li>min="…" <br />Sets a minimum numerical value on range & number.</li>
-        </ul>
-        <ul>
           <li>max="…" <br />Sets a maximum numerical value on range & number.</li>
           <li>step="…" <br />Controls how the number will increment in range & number.</li>
           <li>pattern="…" <br />A JavaScript regular expression to control what is valid input.</li>
@@ -372,7 +441,8 @@
           <li>spellcheck <br />Trigger the browser to perform spell checking in the field.</li>
           <li>readonly <br />Stops the user from modifying the value of the field.</li>
           <li>disabled <br />Stops any interaction on the field.</li>
-          <li>autofocus <br />When the page loads, this field will be focused. Be really careful, only use this when the
+          <li>autofocus <br />When the page loads, this field will be focused. Be really careful, only use
+            this when the
             whole purpose of the page is to fill the form.</li>
           <li>cols <br />Coloums width i textarea</li>
           <li>rows <br />Rows width i textarea</li>
@@ -380,8 +450,11 @@
       </div>
     </article>
 
-    <article class="item">
-      <h1 class="paddingB">Css selectors</h1>
+    <article class="title">
+      <h2>Input attributes</h2>
+    </article>
+
+    <article>
       <div class="flex">
         <ul>
           <li>
@@ -414,8 +487,6 @@
             <br />
             Style a checkbox or radio button when it is selected.
           </li>
-        </ul>
-        <ul>
           <li>
             :disabled
             <br />
@@ -444,7 +515,10 @@
         </ul>
       </div>
     </article>
+
+
   </section>
+
 </body>
 <script>
   document.querySelectorAll("pre code").forEach((el) => {
@@ -453,123 +527,3 @@
 </script>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Snippet Library</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
-</head>
-
-<body>
-
-  <h1>Form Snippet Library</h1>
-
-  <h2>Input types</h2>
-  <p>The HTML input element is used to create interactive controls for web-based forms
-    and specifies an input field where the user can enter data. An input field can vary
-    in many ways, depending on the type attribute.</p>
-
-  <h3>type="text"</h3>
-  <p>Elements of this input create basic single-line text fields and is used
-    for text.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="text"></code></pre>
-
-  <h3>type="number"</h3>
-  <p>Elements of this input type creates text fields and accepts numbers; it has
-    an up/down switch.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="number"></code></pre>
-
-  <h3>type="email"</h3>
-  <p>Elements of this input type creates text fields and accepts an email address.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="email"></code></pre>
-
-  <h3>type="url"</h3>
-  <p>Elements of this input type create text fields that accepts a valid website URL.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="url"></code></pre>
-
-  <h3>type="password"</h3>
-  <p>Elements of this input type create text fields that masks the text that is being
-    entered with bullets.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="password"></code></pre>
-
-  <h3>type="tel"</h3>
-  <p>Elements of this input type create text fields that accepts telephone numbers. There
-    is no restricted format to accommodate all different countries.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="tel"></code></pre>
-
-  <h3>type="time"</h3>
-  <p>Elements of this input type create text fields that accepts time: hours, minutes,
-    seconds.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="time"></code></pre>
-
-  <h3>type="date"</h3>
-  <p>Elements of this input type create text fields that accepts dates; a calendar picker.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="date"></code></pre>
-
-  <h3>type="range"</h3>
-  <p>Elements of this input type create text fields for selecting from a range of numbers.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="range"></code></pre>
-
-  <h3>type="color"</h3>
-  <p>Elements of this input type create color pickers for picking a specific color.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="color"></code></pre>
-
-  <h3>type="file"</h3>
-  <p>Elements of this input type create buttons for chosing a file to upload.<br>
-    Uses accept="…" to limit filetypes.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="file" accept=".jpg,.png,.gif"></code></pre>
-
-  <h3>type="search"</h3>
-  <p>Elements of this input type create text fields that specifies the input as a search
-    field.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="search"></code></pre>
-
-
-
-  <h2>Other input types</h2>
-
-  <h3>type="checkbox"</h3>
-  <p>Elements of this input type turns the input into a check toggle.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><input type="checkbox"></code></pre>
-
-  <h3>id="select"</h3>
-  <p>Elements of this input type create select boxes, aka dropdown boxes, that allows a user
-    to pick one option of many.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><select id="something">
-    <option>something else</option>
-  </select></code></pre>
-
-  <h3>id="textarea"</h3>
-  <p>Elements of this input are an alternative to input type='text' that allows multiple
-    lines and longer text.</p>
-  <h4>Example Code:</h4>
-  <pre><code class="language-html"><textarea id="message"></textarea></code></pre>
-
-</body>
-<script>
-  document.querySelectorAll("pre code").forEach((el) => {
-    el.textContent = el.innerHTML;
-  });
-</script>
-
-</html> -->
